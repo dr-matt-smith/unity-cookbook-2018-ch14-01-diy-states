@@ -8,13 +8,13 @@ public class MyGameManager : MonoBehaviour
     public Button buttonWinGame;
     public Button buttonLoseGame;
 
-    private GameStates.GameStateType currentState = GameStates.GameStateType.Other;
+    private GameStates.GameStateType currentState;
     private float timeGamePlayingStarted;
     private float timeToPressAButton = 5;
 
     void Start()
     {
-        NewGameState(GameStates.GameStateType.GamePlaying);
+        currentState = GameStates.GameStateType.GamePlaying;
     }
 
     public void NewGameState(GameStates.GameStateType newState)
@@ -95,10 +95,6 @@ state.ToString();
                 // do nothing
                 break;
             case GameStates.GameStateType.GameLost:
-                // do nothing
-                break;
-            case GameStates.GameStateType.Other:
-                // cope with game starting in state 'Other'
                 // do nothing
                 break;
         }
